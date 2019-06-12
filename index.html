@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Futura", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+.bgimg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; width:85%;
+  background-image: url('11-01.jpg');
+  min-height: 100%;
+}
+
+$background-color: #FFFFF;
+$headline-color: #F08965;
+*{
+  box-sizing: border-box;
+}
+body{
+  font-family: 'FUTURA', sans-serif;
+  background: $background-color;
+}
+header.header{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  h1{
+    font-size: 8rem;
+    color: $headline-color;
+    text-align: center;
+    margin-top: 0;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+}
+.glitch-window{
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 100%;
+  color: $headline-color;
+  text-shadow: 2px 0 $background-color, -1px 0 yellow, -2px 0 green;
+  overflow: hidden;
+  animation: crt-me 2500ms infinite linear alternate-reverse;
+  // background: red;
+}
+
+//Animation Keyframes
+@keyframes crt-me {
+   0% {
+        clip: rect(31px, 9999px, 94px, 0)
+    }
+    10% {
+        clip: rect(112px, 9999px, 76px, 0)
+    }
+    20% {
+        clip: rect(85px, 9999px, 77px, 0)
+    }
+    30% {
+        clip: rect(27px, 9999px, 97px, 0)
+    }
+    40% {
+        clip: rect(64px, 9999px, 98px, 0)
+    }
+    50% {
+        clip: rect(61px, 9999px, 85px, 0)
+    }
+    60% {
+        clip: rect(99px, 9999px, 114px, 0)
+    }
+    70% {
+        clip: rect(34px, 9999px, 115px, 0)
+    }
+    80% {
+        clip: rect(98px, 9999px, 129px, 0)
+    }
+    90% {
+        clip: rect(43px, 9999px, 96px, 0)
+    }
+    100% {
+        clip: rect(82px, 9999px, 64px, 0)
+    }
+    
+}
+
+
+
+@keyframes color {
+          0%   {color: lightblue;}
+          25%  {color: mistyrose;}
+          50%  {color: khaki;}
+          80% {color: black;}
+
+      }
+
+       h1{ animation: color infinite; animation-duration: 5s  ;font-size: 70px; font-weight: bold; }
+
+
+
+ .pictures img {width: 40%;}
+ .pictures p{font-size: 32px; color: white;font-weight: bold; margin-bottom: 5px; margin-top: 13px;}
+ .pictures div{background-color: #F08965;width: 125px; position: relative; top: -250px; left: 350px;}
+ .fullbackground{background-color: #F08965; width: 100%;}
+
+
+
+//Inspiration Button
+.inspiration-button{
+  font-family: Helvetica, sans-serif;
+  position: fixed;
+  display: inline-block;
+  z-index: 100;
+  bottom: 1rem;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  border-radius: 80px;
+  background: linear-gradient(270deg,#1e80dc,#c61590);
+  //From Instagram...thanks
+  transition: transform 250ms ease;
+  &:hover, &:focus, &:active{
+    transform: translate(-50%, -10%);
+
+  }
+}
+
+ .menu {margin: 0; display: block; width: 860px; }
+    .menu img {margin:0; width:220px; padding-bottom: 25px; margin-right:15px;   float: left;}
+    .imgswap img:last-child{display:none} 
+    .imgswap:hover img:first-child{display:none}
+    .imgswap:hover img:last-child{display:inline-block}
+
+
+</style>
+<body>
+
+<!-- Sidebar with image -->
+<nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
+  <div class="bgimg"></div>
+</nav>
+
+<!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+<nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+  <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+    <i class="fa fa-remove"></i>
+  </a>
+  <div class="w3-bar-block w3-center">
+    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+    <a href="#portfolio" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">IMAGE</a>
+    <a href="#about" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+  </div>
+</nav>
+
+<!-- Page Content -->
+<div class="w3-main w3-padding-large" style="margin-left:40%">
+
+  <!-- Menu icon to open sidebar -->
+  <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+
+  <!-- Header -->
+  <header class="w3-container w3-center" style="padding:128px 16px" id="home">
+    <h1 class="w3-jumbo"><b>SECOND CORNER</b></h1>
+    <p>About Brand Story</p>
+    <img src="h.gif" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block;width:60%;margin:auto;">
+    <img src="/w3images/profile_girl.jpg" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
+    <img src="h.gif" width="40" height="40">
+  </header>
+  <!-- Portfolio Section -->
+  <div class="w3-padding-32 w3-content" id="portfolio">
+     <h2 class="w3-text-grey">IMAGE</h2>
+    <hr class="w3-opacity">
+
+    <!-- Grid for photos -->
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half">
+        <img src="7.png" style="width:100%">
+        <img src="8.png" style="width:100%">
+        <img src="9.png" style="width:100%">
+      </div>
+
+      <div class="w3-half">
+        <img src="10.png" style="width:100%">
+        <img src="11.png" style="width:100%">
+        <img src="12.png" style="width:100%">
+        <img src="/w3images/p6.jpg" style="width:100%">
+      </div>
+    <!-- End photo grid -->
+    </div>
+  <!-- End Portfolio Section -->
+  </div>
+
+  <!-- About Section -->
+  <!-- Portfolio Section -->
+  <div class="w3-padding-32 w3-content" >
+    <!-- Grid for photos -->
+    <div class="w3-row-padding" style="margin:0 -16px">
+    </div>
+  <div class="w3-padding-32 w3-content" id="portfolio">
+    <h2 class="w3-text-grey">INTERVIEW</h2>
+    <hr class="w3-opacity">
+
+    <!-- Grid for photos -->
+
+  <img class="mySlides" src="i.jpg" style="width:100%">
+  <hr class="w3-opacity">
+   
+  <p><img src="D.png" style="padding-top:50px,padding-bottom:100px;"></p>
+<h2 style="padding-top: 50px"><b>세컨드코너만의 매력이 무엇인가요?</b></h2>
+ <h2 class="w3-text-grey" > 
+안성시에는 유일한 스타일의 수제 버거집입니다.</h2>
+<h2 class="w3-text-grey" > 모든 소스와 버거 패티는 모두 직접 만들고 있고 
+새로운 변화를 주려고 달마다 한 번씩 이벤트 메뉴를 개발하고 있습니다.</h2>
+  <hr class="w3-opacity">
+  <h2 style="padding-top: 50px"><b>가게 이름이 세컨드코너인 이유는 무엇인가요?</b></h2>
+<h2 class="w3-text-grey" >시장 두번째 골목에 위치해 "세컨드 코너"라고 붙였습니다.</h2>
+ <hr class="w3-opacity">
+ <h2 style="padding-top: 50px"><b>수제버거집을 창업하게 된 계기가 있나요?</b></h2>
+<h2 class="w3-text-grey" > 맨 처음, 버거를 시작하게 된 계기는 흔히 시장은 대부분 나이가 많으신 분들이 많아 젊은 사람들을 유입시키고 싶어서  수 많은 메뉴를 고민했지만 시장 공략상 우리에게 친숙한 햄버거가 가장 안성맞춤이라고 생각했습니다.  </h2>
+ <hr class="w3-opacity">
+ <h2 style="padding-top: 50px"><b>추천하는 대표적인 버거는 무엇이 있나요?</b></h2>
+<h2 class="w3-text-grey" > 옛날버거와 불고기는 보통 어르신이들 즐겨 드시고,치즈버거는 젊은 고객님들이 많이 찾으십니다.
+  </h2>
+ <hr class="w3-opacity">
+ <h2 style="padding-top: 50px"><b>사장님의 목표나 음식에 대한 철학이 있나요?</b></h2>
+<h2 class="w3-text-grey" > 최종 목표는 하고 싶은 요리의 모든 재료를 제가 직접 만들고 재배해서 한 사람 한 사람에게 정성 가득한 요리를 
+쏟아붓고 싶은 요리사가 되고 싶습니다 
+  </h2>
+  
+   <p><img src="e.png" style="bottom: 8px; right: 16px; padding-left: 620px; padding-top: 50px;"></p>
+    <!-- End photo grid -->
+    </div>
+  <!-- End Portfolio Section -->
+  </div>
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
+   
+    </div>
+
+    <!-- Testimonials -->
+   <h2 class="w3-text-grey">MENU</h2>
+  <div class="w3-padding-32 w3-content" id="IMAGE">
+ <div class="menu">
+    <div class="imgswap" >
+      <img src="1.png" />
+      <img src="1_.png" />
+    </div>
+    <div class="imgswap" >
+      <img src="2.png" />
+      <img src="2_.png" />
+    </div>
+    <div class="imgswap" >
+      <img src="3.png" />
+      <img src="3_.png" />
+    </div>
+    <div class="imgswap" >
+      <img src="4.png" />
+      <img src="4_.png" />
+    </div>
+    <div class="imgswap" >
+      <img src="5.png" />
+      <img src="5_.png" />
+    </div>
+    <div class="imgswap" >
+      <img src="6.png" />
+      <img src="6_.png" />
+    </div>
+  </div>
+</div>
+
+    
+   <!-- Contact Section -->
+       <div class="w3-row-padding" style="margin:0 -16px"></div>
+  <div class="w3-padding-32 w3-content  id="contact" style="margin-bottom:64px">
+    <h2 class="w3-text-grey">CONTACT ME</h2>
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> 경기 안성시 시장길 37</p>
+      <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i>031-676-3669</p>
+      <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> SNS: https://www.instagram.com/2nd_corner_burger/</p>
+    </div>
+    </div>
+    <!-- Image of location/map -->
+    <img src="/w3images/map.jpg" class="w3-image w3-greyscale" style="width:100%;margin:32px 0">
+   
+    <p>Lets get in touch. Send me a message:</p>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Subject" required name="Subject"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message" required name="Message"></p>
+      <p>
+        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form>
+  <!-- End Contact Section -->
+  </div>  
+  
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <!-- End footer -->
+  </footer>
+  
+<!-- END PAGE CONTENT -->
+</div>
+
+<script>
+// Open and close sidebar
+function openNav() {
+  document.getElementById("mySidebar").style.width = "60%";
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+
+</body>
+</html>
